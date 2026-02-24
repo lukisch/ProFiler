@@ -1,0 +1,24 @@
+# ProFiler Suite - Python Dependencies
+# Installation: pip install -r requirements.txt
+
+# GUI Framework
+PyQt6>=6.4.0
+
+# PDF Processing
+PyPDF2>=3.0.0
+pikepdf>=8.0.0
+PyMuPDF>=1.23.0
+pdf2image>=1.16.0
+
+# Document Processing
+python-docx>=1.0.0
+
+# OCR
+pytesseract>=0.3.10
+Pillow>=10.0.0
+
+# File Monitoring
+watchdog>=3.0.0
+
+# Report Generation
+reportlab>=4.0.0
