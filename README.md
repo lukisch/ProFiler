@@ -52,4 +52,6 @@ Oder über `START.bat`.
 
 ## Lizenz
 
-MIT License - Siehe [LICENSE](LICENSE)
+AGPL v3 - Siehe [LICENSE](LICENSE)
+
+Dieses Projekt verwendet PyQt6 (GPL) und PyMuPDF (AGPL).
