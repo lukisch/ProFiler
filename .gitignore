@@ -61,10 +61,41 @@ Thumbs.db
 .DS_Store
 ehthumbs.db
 
-# ---- Standard-Patterns ----
+# ---- Planung & Interne Doku ----
 PLAN.txt
+
+# ---- Private / Archive ----
 _archive/
 _private/
+
+# ---- Entwicklungs- und Backup-Ordner ----
+_BACKUP/
+_DEV/
+_DEV_Verlauf/
+_WARTUNG/
+_Wartung/
+_alt/
+
+# ---- Logs ----
 *.log
 
-# ---- Projektspezifisch (hier eigene Eintraege anfuegen) ----
+# ---- Projektspezifisch ----
+
+# Tesseract OCR (grosse Binaerdateien)
+tessdata/
+tesseract_portable/
+
+# Daten- und Import-Dateien
+*.xlsx
+*.xls
+*.csv
+
+# Generierte Dokumente
+*.pdf
+
+# Alte Versionen und interne Notizen
+Profiler_Suite_V1[0-4]*.py
+Profiler.txt
+Integration aller Tools prompt.txt
+import_daten.xlsx
+indent_log.txt
