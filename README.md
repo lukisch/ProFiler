@@ -14,6 +14,10 @@ Professionelle Dateiverwaltung mit Volltext-Suche, OCR und PDF-Bearbeitung.
 - **Excel-Import** fuer bestehende Dateilisten
 - **Report-Generierung** (PDF)
 
+## Screenshots
+
+![Hauptfenster](screenshots/main.png)
+
 ## Installation
 
 ### Voraussetzungen
@@ -81,3 +85,29 @@ Dieses Projekt verwendet PyQt6 (GPL) und PyMuPDF (AGPL).
 **Version:** 15
 **Autor:** Lukas Geiger
 **Letzte Aktualisierung:** Maerz 2026
+
+---
+
+## English
+
+Professional file management with full-text search, OCR, and PDF editing capabilities.
+
+### Features
+
+- Full-text search with indexing
+- OCR integration (Tesseract)
+- PDF editing and merging
+- Tag-based organization
+
+### Installation
+
+```bash
+git clone https://github.com/lukisch/REL-PUB_ProFiler.git
+cd REL-PUB_ProFiler
+pip install -r requirements.txt
+python "Profiler_Suite_V13.2_Enhanced.py"
+```
+
+### License
+
+See [LICENSE](LICENSE) for details.
