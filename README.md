@@ -1,31 +1,31 @@
 # ProFiler Suite
 
-Professionelle Dateiverwaltung mit Volltext-Suche, OCR und PDF-Bearbeitung.
+Professional file management with full-text search, OCR, and PDF editing.
 
 ## Features
 
-- **Datei-Indizierung** mit SQLite-basiertem Index
-- **Volltext-Suche** in Dokumenten (PDF, DOCX, TXT)
-- **OCR** fuer gescannte Dokumente (Tesseract)
-- **PDF-Viewer und -Editor** (PyMuPDF)
-- **Datei-Ueberwachung** mit Watchdog (Auto-Sync)
-- **Datenschutzampel** - Erkennung sensibler Dateien
-- **System-Tray Integration** fuer Hintergrund-Betrieb
-- **Excel-Import** fuer bestehende Dateilisten
-- **Report-Generierung** (PDF)
+- **File Indexing** with SQLite-based index
+- **Full-Text Search** across documents (PDF, DOCX, TXT)
+- **OCR** for scanned documents (Tesseract)
+- **PDF Viewer and Editor** (PyMuPDF)
+- **File Monitoring** with Watchdog (Auto-Sync)
+- **Privacy Traffic Light** — detection of sensitive files
+- **System Tray Integration** for background operation
+- **Excel Import** for existing file lists
+- **Report Generation** (PDF)
 
 ## Screenshots
 
-![Hauptfenster](screenshots/main.png)
+\![Main Window](screenshots/main.png)
 
 ## Installation
 
-### Voraussetzungen
+### Prerequisites
 
 - Python >= 3.8
-- Tesseract OCR (separat installieren oder portable Version nutzen)
+- Tesseract OCR (install separately or use the portable version)
 
-### Python-Abhaengigkeiten
+### Python Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -33,81 +33,59 @@ pip install -r requirements.txt
 
 ### Tesseract OCR
 
-Fuer OCR-Funktionalitaet wird [Tesseract](https://github.com/tesseract-ocr/tesseract) benoetigt.
-Der Pfad kann in `profiler_config.json` konfiguriert werden.
+OCR functionality requires [Tesseract](https://github.com/tesseract-ocr/tesseract).
+The path can be configured in `profiler_config.json`.
 
-## Verwendung
+## Usage
 
 ```bash
 python Profiler_Suite_V15.py
 ```
 
-Oder ueber die Batch-Datei:
+Or via the batch file:
 
 ```bash
 START.bat
 ```
 
-## Konfiguration
+## Configuration
 
-| Datei | Zweck |
-|-------|-------|
-| `profiler_config.json` | Hauptkonfiguration (Pfade, OCR, Index) |
-| `profiler_settings.json` | Benutzereinstellungen (UI, Theme) |
-| `search_config.json` | Suchoptionen und Filter |
+| File | Purpose |
+|------|---------|
+| `profiler_config.json` | Main configuration (paths, OCR, index) |
+| `profiler_settings.json` | User settings (UI, theme) |
+| `search_config.json` | Search options and filters |
 
-## Enthaltene Tools
+## Included Tools
 
-| Tool | Beschreibung |
+| Tool | Description |
 |------|-------------|
-| `Profiler_Suite_V15.py` | Hauptanwendung |
-| `ProFiler_Datenschutzampel.py` | Standalone-Datenschutzpruefung |
-| `SQLiteViewer.py` | Datenbank-Viewer fuer den Index |
-| `import_excel_to_profiler.py` | Excel-Import in den Profiler-Index |
-| `indent_gui_checker.py` | GUI-Einrueckungs-Checker |
+| `Profiler_Suite_V15.py` | Main application |
+| `ProFiler_Datenschutzampel.py` | Standalone privacy check |
+| `SQLiteViewer.py` | Database viewer for the index |
+| `import_excel_to_profiler.py` | Excel import into the Profiler index |
+| `indent_gui_checker.py` | GUI indentation checker |
 
-## Unterstuetzte Formate
+## Supported Formats
 
-| Kategorie | Formate |
-|-----------|---------|
-| **Dokumente** | PDF, DOCX, TXT, RTF |
-| **Bilder** | PNG, JPG, TIFF (mit OCR) |
-| **Tabellen** | XLSX, XLS, CSV |
+| Category | Formats |
+|----------|---------|
+| **Documents** | PDF, DOCX, TXT, RTF |
+| **Images** | PNG, JPG, TIFF (with OCR) |
+| **Spreadsheets** | XLSX, XLS, CSV |
 
-## Lizenz
+## License
 
-AGPL v3 - Siehe [LICENSE](LICENSE)
+AGPL v3 — See [LICENSE](LICENSE)
 
-Dieses Projekt verwendet PyQt6 (GPL) und PyMuPDF (AGPL).
+This project uses PyQt6 (GPL) and PyMuPDF (AGPL).
 
 ---
 
 **Version:** 15
-**Autor:** Lukas Geiger
-**Letzte Aktualisierung:** Maerz 2026
+**Author:** Lukas Geiger
+**Last Updated:** March 2026
 
 ---
 
-## English
-
-Professional file management with full-text search, OCR, and PDF editing capabilities.
-
-### Features
-
-- Full-text search with indexing
-- OCR integration (Tesseract)
-- PDF editing and merging
-- Tag-based organization
-
-### Installation
-
-```bash
-git clone https://github.com/lukisch/REL-PUB_ProFiler.git
-cd REL-PUB_ProFiler
-pip install -r requirements.txt
-python "Profiler_Suite_V13.2_Enhanced.py"
-```
-
-### License
-
-See [LICENSE](LICENSE) for details.
+Deutsche Version: [README.de.md](README.de.md)
