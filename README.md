@@ -1,31 +1,31 @@
 # ProFiler Suite
 
-Professional file management with full-text search, OCR, and PDF editing.
+Professionelle Dateiverwaltung mit Volltextsuche, OCR und PDF-Bearbeitung.
 
 ## Features
 
-- **File Indexing** with SQLite-based index
-- **Full-Text Search** across documents (PDF, DOCX, TXT)
-- **OCR** for scanned documents (Tesseract)
-- **PDF Viewer and Editor** (PyMuPDF)
-- **File Monitoring** with Watchdog (Auto-Sync)
-- **Privacy Traffic Light** — detection of sensitive files
-- **System Tray Integration** for background operation
-- **Excel Import** for existing file lists
-- **Report Generation** (PDF)
+- **Datei-Indexierung** mit SQLite-basiertem Index
+- **Volltextsuche** ueber Dokumente (PDF, DOCX, TXT)
+- **OCR** fuer gescannte Dokumente (Tesseract)
+- **PDF-Viewer und -Editor** (PyMuPDF)
+- **Dateiueberwachung** mit Watchdog (Auto-Sync)
+- **Datenschutzampel** -- Erkennung sensibler Dateien
+- **System-Tray-Integration** fuer Hintergrundbetrieb
+- **Excel-Import** fuer bestehende Dateilisten
+- **Berichterstellung** (PDF)
 
 ## Screenshots
 
-\![Main Window](screenshots/main.png)
+![Hauptfenster](screenshots/main.png)
 
 ## Installation
 
-### Prerequisites
+### Voraussetzungen
 
 - Python >= 3.8
-- Tesseract OCR (install separately or use the portable version)
+- Tesseract OCR (separat installieren oder portable Version verwenden)
 
-### Python Dependencies
+### Python-Abhaengigkeiten
 
 ```bash
 pip install -r requirements.txt
@@ -33,10 +33,100 @@ pip install -r requirements.txt
 
 ### Tesseract OCR
 
+Die OCR-Funktionalitaet erfordert [Tesseract](https://github.com/tesseract-ocr/tesseract).
+Der Pfad kann in `profiler_config.json` konfiguriert werden.
+
+## Nutzung
+
+```bash
+python Profiler_Suite_V15.py
+```
+
+Oder ueber die Batch-Datei:
+
+```bash
+START.bat
+```
+
+## Konfiguration
+
+| Datei | Zweck |
+|-------|-------|
+| `profiler_config.json` | Hauptkonfiguration (Pfade, OCR, Index) |
+| `profiler_settings.json` | Benutzereinstellungen (UI, Theme) |
+| `search_config.json` | Suchoptionen und Filter |
+
+## Enthaltene Tools
+
+| Tool | Beschreibung |
+|------|--------------|
+| `Profiler_Suite_V15.py` | Hauptanwendung |
+| `ProFiler_Datenschutzampel.py` | Eigenstaendiger Datenschutz-Check |
+| `SQLiteViewer.py` | Datenbank-Viewer fuer den Index |
+| `import_excel_to_profiler.py` | Excel-Import in den Profiler-Index |
+| `indent_gui_checker.py` | GUI-Einrueckungspruefer |
+
+## Unterstuetzte Formate
+
+| Kategorie | Formate |
+|-----------|---------|
+| **Dokumente** | PDF, DOCX, TXT, RTF |
+| **Bilder** | PNG, JPG, TIFF (mit OCR) |
+| **Tabellen** | XLSX, XLS, CSV |
+
+## Lizenz
+
+AGPL v3 -- Siehe [LICENSE](LICENSE)
+
+Dieses Projekt verwendet PyQt6 (GPL) und PyMuPDF (AGPL).
+
+---
+
+**Version:** 15
+**Autor:** Lukas Geiger
+**Zuletzt aktualisiert:** Maerz 2026
+
+---
+
+## English
+
+Professional file management with full-text search, OCR, and PDF editing.
+
+### Features
+
+- **File Indexing** with SQLite-based index
+- **Full-Text Search** across documents (PDF, DOCX, TXT)
+- **OCR** for scanned documents (Tesseract)
+- **PDF Viewer and Editor** (PyMuPDF)
+- **File Monitoring** with Watchdog (Auto-Sync)
+- **Privacy Traffic Light** -- detection of sensitive files
+- **System Tray Integration** for background operation
+- **Excel Import** for existing file lists
+- **Report Generation** (PDF)
+
+### Screenshots
+
+![Main Window](screenshots/main.png)
+
+### Installation
+
+#### Prerequisites
+
+- Python >= 3.8
+- Tesseract OCR (install separately or use the portable version)
+
+#### Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+#### Tesseract OCR
+
 OCR functionality requires [Tesseract](https://github.com/tesseract-ocr/tesseract).
 The path can be configured in `profiler_config.json`.
 
-## Usage
+### Usage
 
 ```bash
 python Profiler_Suite_V15.py
@@ -48,7 +138,7 @@ Or via the batch file:
 START.bat
 ```
 
-## Configuration
+### Configuration
 
 | File | Purpose |
 |------|---------|
@@ -56,7 +146,7 @@ START.bat
 | `profiler_settings.json` | User settings (UI, theme) |
 | `search_config.json` | Search options and filters |
 
-## Included Tools
+### Included Tools
 
 | Tool | Description |
 |------|-------------|
@@ -66,7 +156,7 @@ START.bat
 | `import_excel_to_profiler.py` | Excel import into the Profiler index |
 | `indent_gui_checker.py` | GUI indentation checker |
 
-## Supported Formats
+### Supported Formats
 
 | Category | Formats |
 |----------|---------|
@@ -74,9 +164,9 @@ START.bat
 | **Images** | PNG, JPG, TIFF (with OCR) |
 | **Spreadsheets** | XLSX, XLS, CSV |
 
-## License
+### License
 
-AGPL v3 — See [LICENSE](LICENSE)
+AGPL v3 -- See [LICENSE](LICENSE)
 
 This project uses PyQt6 (GPL) and PyMuPDF (AGPL).
 
@@ -85,7 +175,3 @@ This project uses PyQt6 (GPL) and PyMuPDF (AGPL).
 **Version:** 15
 **Author:** Lukas Geiger
 **Last Updated:** March 2026
-
----
-
-🇩🇪 [Deutsche Version](README.de.md)
