@@ -88,4 +88,4 @@ Dieses Projekt verwendet PyQt6 (GPL) und PyMuPDF (AGPL).
 
 ---
 
-English version: [README.md](README.md)
+🇬🇧 [English version](README.md)
