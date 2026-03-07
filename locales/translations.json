@@ -1,0 +1,382 @@
+{
+  "(Datei nicht gefunden)": {
+    "de": "(Datei nicht gefunden)",
+    "en": "(File not found)"
+  },
+  "+ Hinzufügen": {
+    "de": "+ Hinzufügen",
+    "en": "+ Add"
+  },
+  "+ Ordner hinzufügen": {
+    "de": "+ Ordner hinzufügen",
+    "en": "+ Add Folder"
+  },
+  "<b>Filter</b>": {
+    "de": "<b>Filter</b>",
+    "en": "<b>Filter</b>"
+  },
+  "Abbrechen": {
+    "de": "Abbrechen",
+    "en": "Cancel"
+  },
+  "Aktualisieren": {
+    "de": "Aktualisieren",
+    "en": "Refresh"
+  },
+  "Alle auswählen [A]": {
+    "de": "Alle auswählen [A]",
+    "en": "Select All [A]"
+  },
+  "Analyse läuft…": {
+    "de": "Analyse läuft…",
+    "en": "Analysis running…"
+  },
+  "Anonymisierungs-Einstellungen": {
+    "de": "Anonymisierungs-Einstellungen",
+    "en": "Anonymization Settings"
+  },
+  "Ausblenden (Safety-Mode - Keine Dateisystem-nderung)": {
+    "de": "Ausblenden (Safety-Mode - Keine Dateisystem-nderung)",
+    "en": "Hide (Safety Mode - No File System Changes)"
+  },
+  "Ausblenden (Safety-Mode - Keine Dateisystem-Änderung)": {
+    "de": "Ausblenden (Safety-Mode - Keine Dateisystem-Änderung)",
+    "en": "Hide (Safety Mode - No File System Changes)"
+  },
+  "Ausgewählt: 0 Seiten": {
+    "de": "Ausgewählt: 0 Seiten",
+    "en": "Selected: 0 Pages"
+  },
+  "Ausgewählte Duplikate löschen": {
+    "de": "Ausgewählte Duplikate löschen",
+    "en": "Delete Selected Duplicates"
+  },
+  "Auswählen [SPACE]": {
+    "de": "Auswählen [SPACE]",
+    "en": "Select [SPACE]"
+  },
+  "Auszug speichern": {
+    "de": "Auszug speichern",
+    "en": "Save Excerpt"
+  },
+  "Benötigt: Tesseract-OCR installiert": {
+    "de": "Benötigt: Tesseract-OCR installiert",
+    "en": "Requires: Tesseract-OCR installed"
+  },
+  "Bereinigung läuft...": {
+    "de": "Bereinigung läuft...",
+    "en": "Cleanup running..."
+  },
+  "Bereinigungs-Optionen": {
+    "de": "Bereinigungs-Optionen",
+    "en": "Cleanup Options"
+  },
+  "DB wählen": {
+    "de": "DB wählen",
+    "en": "Select DB"
+  },
+  "Datei auswählen & korrigieren": {
+    "de": "Datei auswählen & korrigieren",
+    "en": "Select & Fix File"
+  },
+  "Datei nicht gefunden": {
+    "de": "Datei nicht gefunden",
+    "en": "File not found"
+  },
+  "Datei nicht gefunden.": {
+    "de": "Datei nicht gefunden.",
+    "en": "File not found."
+  },
+  "Dateiliste exportieren": {
+    "de": "Dateiliste exportieren",
+    "en": "Export File List"
+  },
+  "Dateitypen:": {
+    "de": "Dateitypen:",
+    "en": "File Types:"
+  },
+  "Einrckungsfehler gefunden": {
+    "de": "Einrckungsfehler gefunden",
+    "en": "Indentation Error Found"
+  },
+  "Einrückungsfehler gefunden": {
+    "de": "Einrückungsfehler gefunden",
+    "en": "Indentation Error Found"
+  },
+  "Einstellungen": {
+    "de": "Einstellungen",
+    "en": "Settings"
+  },
+  "Erstellen Sie eine neue Prompt-Datei mit Versionsverwaltung:": {
+    "de": "Erstellen Sie eine neue Prompt-Datei mit Versionsverwaltung:",
+    "en": "Create a new prompt file with version control:"
+  },
+  "Exportieren...": {
+    "de": "Exportieren...",
+    "en": "Export..."
+  },
+  "Fehlende Abhängigkeiten": {
+    "de": "Fehlende Abhängigkeiten",
+    "en": "Missing Dependencies"
+  },
+  "Fehler bei Vorschau": {
+    "de": "Fehler bei Vorschau",
+    "en": "Preview Error"
+  },
+  "Filter": {
+    "de": "Filter",
+    "en": "Filter"
+  },
+  "Filter Typ:": {
+    "de": "Filter Typ:",
+    "en": "Filter Type:"
+  },
+  "Global-DB wählen": {
+    "de": "Global-DB wählen",
+    "en": "Select Global DB"
+  },
+  "Hinzufügen": {
+    "de": "Hinzufügen",
+    "en": "Add"
+  },
+  "Import luft...": {
+    "de": "Import luft...",
+    "en": "Import running..."
+  },
+  "Import läuft...": {
+    "de": "Import läuft...",
+    "en": "Import running..."
+  },
+  "Importieren...": {
+    "de": "Importieren...",
+    "en": "Import..."
+  },
+  "Lösch-Vorschau": {
+    "de": "Lösch-Vorschau",
+    "en": "Delete Preview"
+  },
+  "Masterpasswrter für schnelle Batch-Operationen": {
+    "de": "Masterpasswrter für schnelle Batch-Operationen",
+    "en": "Master Passwords for Quick Batch Operations"
+  },
+  "Masterpasswörter für schnelle Batch-Operationen": {
+    "de": "Masterpasswörter für schnelle Batch-Operationen",
+    "en": "Master Passwords for Quick Batch Operations"
+  },
+  "Neue Version wird in derselben Datei gespeichert:": {
+    "de": "Neue Version wird in derselben Datei gespeichert:",
+    "en": "New version will be saved in the same file:"
+  },
+  "Nächste ▶": {
+    "de": "Nächste ▶",
+    "en": "Next ▶"
+  },
+  "Optionen:": {
+    "de": "Optionen:",
+    "en": "Options:"
+  },
+  "Ordner auswählen & prüfen": {
+    "de": "Ordner auswählen & prüfen",
+    "en": "Select & Check Folder"
+  },
+  "PDF-Schwärzung": {
+    "de": "PDF-Schwärzung",
+    "en": "PDF Redaction"
+  },
+  "Permanent Löschen": {
+    "de": "Permanent Löschen",
+    "en": "Permanently Delete"
+  },
+  "Python-Entwicklungsumgebung oeffnen": {
+    "de": "Python-Entwicklungsumgebung oeffnen",
+    "en": "Open Python Development Environment"
+  },
+  "Python-Entwicklungsumgebung öffnen": {
+    "de": "Python-Entwicklungsumgebung öffnen",
+    "en": "Open Python Development Environment"
+  },
+  "Quelle wählen": {
+    "de": "Quelle wählen",
+    "en": "Select Source"
+  },
+  "Schließen": {
+    "de": "Schließen",
+    "en": "Close"
+  },
+  "Speichern": {
+    "de": "Speichern",
+    "en": "Save"
+  },
+  "Start": {
+    "de": "Start",
+    "en": "Start"
+  },
+  "Start Sync": {
+    "de": "Start Sync",
+    "en": "Start Sync"
+  },
+  "Status: Grün - Alles sicher": {
+    "de": "Status: Grün - Alles sicher",
+    "en": "Status: Green - All Safe"
+  },
+  "Strategie beim Löschen:": {
+    "de": "Strategie beim Löschen:",
+    "en": "Deletion Strategy:"
+  },
+  "Suche läuft...": {
+    "de": "Suche läuft...",
+    "en": "Searching..."
+  },
+  "Synchronisation läuft…": {
+    "de": "Synchronisation läuft…",
+    "en": "Synchronization running…"
+  },
+  "Synchronisiert: 0 | Fehler: 0": {
+    "de": "Synchronisiert: 0 | Fehler: 0",
+    "en": "Synchronized: 0 | Errors: 0"
+  },
+  "Wähle eine .py-Datei mit Encoding-Problemen aus:": {
+    "de": "Wähle eine .py-Datei mit Encoding-Problemen aus:",
+    "en": "Select a .py file with encoding issues:"
+  },
+  "Wähle einen Ordner mit .py-Dateien zur Prüfung:": {
+    "de": "Wähle einen Ordner mit .py-Dateien zur Prüfung:",
+    "en": "Select a folder with .py files to check:"
+  },
+  "Ziel wählen": {
+    "de": "Ziel wählen",
+    "en": "Select Target"
+  },
+  "[Bilddatei - Vorschau nicht verfügbar]": {
+    "de": "[Bilddatei - Vorschau nicht verfügbar]",
+    "en": "[Image file - Preview not available]"
+  },
+  "[Bilddatei - Vorschau wird in Textbox nicht angezeigt]": {
+    "de": "[Bilddatei - Vorschau wird in Textbox nicht angezeigt]",
+    "en": "[Image file - Preview not displayed in text box]"
+  },
+  "[Datei ist leer oder Inhalt nicht lesbar]": {
+    "de": "[Datei ist leer oder Inhalt nicht lesbar]",
+    "en": "[File is empty or content not readable]"
+  },
+  "oeffnen": {
+    "de": "oeffnen",
+    "en": "Open"
+  },
+  "âš™ï¸ Einstellungen": {
+    "de": "âš™ï¸ Einstellungen",
+    "en": "âš™ï¸ Settings"
+  },
+  "ðŸ'¾ Auszug speichern": {
+    "de": "ðŸ'¾ Auszug speichern",
+    "en": "ðŸ'¾ Save Excerpt"
+  },
+  "ðŸ" Filter": {
+    "de": "ðŸ" Filter",
+    "en": "ðŸ" Filter"
+  },
+  "öffnen": {
+    "de": "öffnen",
+    "en": "Open"
+  },
+  "▶ Starten": {
+    "de": "▶ Starten",
+    "en": "▶ Start"
+  },
+  "▶ Sync Starten": {
+    "de": "▶ Sync Starten",
+    "en": "▶ Start Sync"
+  },
+  "▶️ Starten": {
+    "de": "▶️ Starten",
+    "en": "▶️ Start"
+  },
+  "⚙️ Einstellungen": {
+    "de": "⚙️ Einstellungen",
+    "en": "⚙️ Settings"
+  },
+  "✅ Watchdog verfügbar - Bereit": {
+    "de": "✅ Watchdog verfügbar - Bereit",
+    "en": "✅ Watchdog available - Ready"
+  },
+  "✓ Auswählen [SPACE]": {
+    "de": "✓ Auswählen [SPACE]",
+    "en": "✓ Select [SPACE]"
+  },
+  "✗ Abwählen [SPACE]": {
+    "de": "✗ Abwählen [SPACE]",
+    "en": "✗ Deselect [SPACE]"
+  },
+  "❌ Abbrechen": {
+    "de": "❌ Abbrechen",
+    "en": "❌ Cancel"
+  },
+  "❌ Datei nicht gefunden.\\n\\nDie Datei existiert nicht mehr am angegebenen Pfad.": {
+    "de": "❌ Datei nicht gefunden.\\n\\nDie Datei existiert nicht mehr am angegebenen Pfad.",
+    "en": "❌ File not found.\\n\\nThe file no longer exists at the specified path."
+  },
+  "➕ Hinzufügen": {
+    "de": "➕ Hinzufügen",
+    "en": "➕ Add"
+  },
+  "💾 Auszug speichern": {
+    "de": "💾 Auszug speichern",
+    "en": "💾 Save Excerpt"
+  },
+  "💾 Exportieren...": {
+    "de": "💾 Exportieren...",
+    "en": "💾 Export..."
+  },
+  "💾 Listen speichern": {
+    "de": "💾 Listen speichern",
+    "en": "💾 Save Lists"
+  },
+  "💾 Speichern": {
+    "de": "💾 Speichern",
+    "en": "💾 Save"
+  },
+  "📁 Dateitype:": {
+    "de": "📁 Dateitype:",
+    "en": "📁 File Type:"
+  },
+  "📂 Importieren...": {
+    "de": "📂 Importieren...",
+    "en": "📂 Import..."
+  },
+  "📂 Öffnen": {
+    "de": "📂 Öffnen",
+    "en": "📂 Open"
+  },
+  "📄 Dateiliste exportieren": {
+    "de": "📄 Dateiliste exportieren",
+    "en": "📄 Export File List"
+  },
+  "📋 Letzte Zwischenablage-Einträge:": {
+    "de": "📋 Letzte Zwischenablage-Einträge:",
+    "en": "📋 Recent Clipboard Entries:"
+  },
+  "🔄 Aktualisieren": {
+    "de": "🔄 Aktualisieren",
+    "en": "🔄 Refresh"
+  },
+  "🔍 Filter": {
+    "de": "🔍 Filter",
+    "en": "🔍 Filter"
+  },
+  "🔗 Zusammenführen": {
+    "de": "🔗 Zusammenführen",
+    "en": "🔗 Merge"
+  },
+  "🗑️ Ausgewählte entfernen": {
+    "de": "🗑️ Ausgewählte entfernen",
+    "en": "🗑️ Remove Selected"
+  },
+  "🗑️ Verlauf löschen": {
+    "de": "🗑️ Verlauf löschen",
+    "en": "🗑️ Clear History"
+  },
+  "🟢 Auf Grün setzen": {
+    "de": "🟢 Auf Grün setzen",
+    "en": "🟢 Set to Green"
+  }
+}
