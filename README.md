@@ -74,6 +74,20 @@ START.bat
 | **Bilder** | PNG, JPG, TIFF (mit OCR) |
 | **Tabellen** | XLSX, XLS, CSV |
 
+## See Also: KnowledgeDigest
+
+Looking for full-text search with BM25 ranking, LLM summarization, or a web viewer for your documents? Check out [KnowledgeDigest](https://github.com/file-bricks/knowledgedigest) -- a portable knowledge database from the same author.
+
+| | ProFiler | KnowledgeDigest |
+|---|---|---|
+| **Focus** | File management, PDF tools, OCR, privacy | Knowledge search, chunking, LLM summaries |
+| **Search** | Multi-DB, type/size/date filters | FTS5 with BM25 ranking, snippet highlighting |
+| **PDF** | Encrypt, decrypt, extract, redact, OCR | Read-only (text extraction) |
+| **Privacy** | Anonymization, redaction, clipboard guard | -- |
+| **AI** | -- | LLM summarization (Haiku), keyword extraction |
+| **Interfaces** | Desktop GUI, System Tray | Desktop GUI, Web Viewer, CLI, Python API |
+| **License** | AGPL v3 | MIT |
+
 ## Lizenz
 
 AGPL v3 -- Siehe [LICENSE](LICENSE)
