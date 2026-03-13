@@ -11,6 +11,7 @@ import time
 import subprocess
 import traceback
 from datetime import datetime, timedelta
+from pathlib import Path
 
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QListWidget, QListWidgetItem,
@@ -108,9 +109,10 @@ print("Encoding Check:", sys.stdout.encoding)
 # 1. SHARED UTILS & CONFIG
 # ============================================================================
 
-SEARCH_CONFIG_PATH = "search_config.json"
-SYNC_CONFIG_PATH = "profiler_config.json"
-SETTINGS_PATH = "profiler_settings.json"
+_CONFIG_DIR = Path.home() / ".profiler_suite"
+SEARCH_CONFIG_PATH = str(_CONFIG_DIR / "search_config.json")
+SYNC_CONFIG_PATH = str(_CONFIG_DIR / "profiler_config.json")
+SETTINGS_PATH = str(_CONFIG_DIR / "profiler_settings.json")
 
 # Konstanten für File Processing
 DEFAULT_CHUNK_SIZE = 1024 * 1024  # 1 MB für Hash-Berechnung
@@ -274,6 +276,7 @@ class SearchConfigManager:
         else:
             self.save()
     def save(self):
+        os.makedirs(os.path.dirname(SEARCH_CONFIG_PATH) or ".", exist_ok=True)
         with open(SEARCH_CONFIG_PATH, "w", encoding="utf-8") as f:
             json.dump({"databases": self.dbs}, f, indent=2)
     def add_db(self, path):
@@ -337,6 +340,7 @@ class SettingsManager:
             self.save()
     
     def save(self):
+        os.makedirs(os.path.dirname(SETTINGS_PATH) or ".", exist_ok=True)
         with open(SETTINGS_PATH, "w", encoding="utf-8") as f:
             json.dump(self.data, f, indent=2)
     
@@ -527,7 +531,7 @@ class PDFUtils:
     
     @staticmethod
     def encrypt_pdf(input_path, output_path, password):
-        """Verschlsselt ein PDF mit Passwort"""
+        """Verschlüsselt ein PDF mit Passwort"""
         if not HAS_PDF:
             raise Exception("PyPDF2 nicht installiert")
         
@@ -539,7 +543,7 @@ class PDFUtils:
             for page in reader.pages:
                 writer.add_page(page)
             
-            # Verschlsseln
+            # Verschlüsseln
             writer.encrypt(password)
             
             # Speichern
@@ -552,7 +556,7 @@ class PDFUtils:
     
     @staticmethod
     def decrypt_pdf(input_path, output_path, password):
-        """Entschlsselt ein PDF"""
+        """Entschlüsselt ein PDF"""
         if not HAS_PDF:
             raise Exception("PyPDF2 nicht installiert")
         
@@ -637,10 +641,10 @@ class PDFUtils:
             writer = PdfWriter()
             
             for img in images:
-                # OCR durchfhren
+                # OCR durchführen
                 text = pytesseract.image_to_string(img, lang=lang)
                 
-                # Hier msste man eigentlich ein searchable PDF erstellen
+                # Hier müsste man eigentlich ein searchable PDF erstellen
                 # Vereinfachte Version: Nur Text extrahieren
                 # Für production: pdf2pdfocr oder ocrmypdf verwenden
                 pass
@@ -2214,7 +2218,7 @@ class ConnectionConfigManager:
         self.save()
     
     def migrate_connections(self):
-        """Migriert alte Verbindungen und fgt enabled/auto_update hinzu"""
+        """Migriert alte Verbindungen und fügt enabled/auto_update hinzu"""
         migrated = False
         for conn in self.data.get("connections", []):
             if "enabled" not in conn:
@@ -2223,29 +2227,29 @@ class ConnectionConfigManager:
             if "auto_update" not in conn:
                 conn["auto_update"] = False
                 migrated = True
-        
+
         if migrated:
             self.save()
-            print(" Verbindungen migriert (enabled/auto_update Flags hinzugefgt)")
-    
+            print(" Verbindungen migriert (enabled/auto_update Flags hinzugefügt)")
+
     def sync_all_to_search(self):
         """Synchronisiert alle enabled Verbindungen mit SearchConfigManager"""
         # Leere Search-DB-Liste
         self.search_mgr.dbs = []
-        
-        # Fge alle enabled Verbindungen hinzu
+
+        # Füge alle enabled Verbindungen hinzu
         for conn in self.data.get("connections", []):
             if conn.get("enabled", True):
                 db_path = conn.get("db_path")
                 if db_path and os.path.exists(db_path):
                     self.search_mgr.add_db(db_path)
-        
+
         print(f" {len(self.search_mgr.dbs)} Verbindungen für Suche aktiviert")
-    
+
     def get_enabled_connections(self):
         """Gibt nur enabled Verbindungen zurück"""
         return [c for c in self.data.get("connections", []) if c.get("enabled", True)]
-    
+
     def toggle_connection(self, conn_id, enabled):
         """Aktiviert/Deaktiviert eine Verbindung"""
         conns = self.data.get("connections", [])
@@ -2253,7 +2257,7 @@ class ConnectionConfigManager:
             if conn.get("id") == conn_id:
                 conn["enabled"] = enabled
                 self.save()
-                
+
                 # Sync mit SearchConfigManager
                 if enabled:
                     db_path = conn.get("db_path")
@@ -2263,10 +2267,10 @@ class ConnectionConfigManager:
                     db_path = conn.get("db_path")
                     if db_path:
                         self.search_mgr.remove_db(db_path)
-                
+
                 return True
         return False
-    
+
     def toggle_auto_update(self, conn_id, auto_update):
         """Schaltet Auto-Update für eine Verbindung ein/aus"""
         conns = self.data.get("connections", [])
@@ -2276,8 +2280,6 @@ class ConnectionConfigManager:
                 self.save()
                 return True
         return False
-
-
 
 
 
@@ -2314,72 +2316,6 @@ def shorten_filename(name, max_len):
         return name
     keep = max(1, max_len - len(ext) - 1)
     return root[:keep] + "_" + ext
-
-
-    
-    def migrate_connections(self):
-        """Migriert alte Verbindungen und fgt enabled/auto_update hinzu"""
-        migrated = False
-        for conn in self.data.get("connections", []):
-            if "enabled" not in conn:
-                conn["enabled"] = True
-                migrated = True
-            if "auto_update" not in conn:
-                conn["auto_update"] = False
-                migrated = True
-        
-        if migrated:
-            self.save()
-            print(" Verbindungen migriert (enabled/auto_update Flags hinzugefgt)")
-    
-    def sync_all_to_search(self):
-        """Synchronisiert alle enabled Verbindungen mit SearchConfigManager"""
-        # Leere Search-DB-Liste
-        self.search_mgr.dbs = []
-        
-        # Fge alle enabled Verbindungen hinzu
-        for conn in self.data.get("connections", []):
-            if conn.get("enabled", True):
-                db_path = conn.get("db_path")
-                if db_path and os.path.exists(db_path):
-                    self.search_mgr.add_db(db_path)
-        
-        print(f" {len(self.search_mgr.dbs)} Verbindungen für Suche aktiviert")
-    
-    def get_enabled_connections(self):
-        """Gibt nur enabled Verbindungen zurück"""
-        return [c for c in self.data.get("connections", []) if c.get("enabled", True)]
-    
-    def toggle_connection(self, conn_id, enabled):
-        """Aktiviert/Deaktiviert eine Verbindung"""
-        conns = self.data.get("connections", [])
-        for conn in conns:
-            if conn.get("id") == conn_id:
-                conn["enabled"] = enabled
-                self.save()
-                
-                # Sync mit SearchConfigManager
-                if enabled:
-                    db_path = conn.get("db_path")
-                    if db_path:
-                        self.search_mgr.add_db(db_path)
-                else:
-                    db_path = conn.get("db_path")
-                    if db_path:
-                        self.search_mgr.remove_db(db_path)
-                
-                return True
-        return False
-    
-    def toggle_auto_update(self, conn_id, auto_update):
-        """Schaltet Auto-Update für eine Verbindung ein/aus"""
-        conns = self.data.get("connections", [])
-        for conn in conns:
-            if conn.get("id") == conn_id:
-                conn["auto_update"] = auto_update
-                self.save()
-                return True
-        return False
 
 
 
@@ -2543,7 +2479,7 @@ class PDFPasswordDialog(QDialog):
         
         # Info
         if mode == "encrypt":
-            info_text = f"{len(file_paths)} Datei(en) ausgewählt\n\nPasswort zum Verschlsseln festlegen:"
+            info_text = f"{len(file_paths)} Datei(en) ausgewählt\n\nPasswort zum Verschlüsseln festlegen:"
         else:
             info_text = f" {len(file_paths)} verschlüsselte Datei(en)\n\nPasswort zum Entschlüsseln eingeben:"
         
@@ -4920,9 +4856,9 @@ class SearchWidgetHybrid(QWidget):
         if path.lower().endswith('.pdf'):
             preview += "<b>PDF-Status:</b><br>"
             if result.get('pdf_encrypted'):
-                preview += " Verschlsselt<br>"
+                preview += " Verschlüsselt<br>"
             if result.get('pdf_has_text'):
-                preview += "Enthlt Text<br>"
+                preview += "Enthält Text<br>"
             else:
                 preview += "Nur Bilder<br>"
             if result.get('pdf_was_encrypted'):
@@ -5023,7 +4959,7 @@ class SearchWidgetHybrid(QWidget):
             if is_pdf:
                 pdf_menu = menu.addMenu(" PDF")
                 pdf_menu.addAction(" Auszug erstellen...", self.create_pdf_excerpt)
-                pdf_menu.addAction(" Verschlsseln...", self.encrypt_pdf)
+                pdf_menu.addAction(" Verschlüsseln...", self.encrypt_pdf)
                 pdf_menu.addAction(" Entschlüsseln", self.decrypt_pdf)
             
             # Python-spezifisch
