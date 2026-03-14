@@ -4054,7 +4054,7 @@ def parse_browser_bookmarks(html_path):
                 with open(html_path, 'r', encoding=encoding) as f:
                     content = f.read()
                 break
-            except:
+            except (IOError, UnicodeDecodeError, OSError):
                 continue
         
         if not content:
@@ -4369,7 +4369,7 @@ class IndexWorker(QThread):
                 try:
                     if 'file_id' in locals():
                         db.add_event(file_id, "error", str(e))
-                except:
+                except (IOError, OSError):
                     pass
                 done += 1
                 continue
@@ -4786,7 +4786,7 @@ class SearchWidgetHybrid(QWidget):
         try:
             date_str = result['mtime'][:10] if result.get('mtime') else ""
             item.setText(3, date_str)
-        except:
+        except (ValueError, TypeError, IndexError):
             item.setText(3, "")
         
         # Icon
@@ -4872,7 +4872,7 @@ class SearchWidgetHybrid(QWidget):
                     with open(path, 'r', encoding='utf-8', errors='ignore') as f:
                         content = f.read(500)
                         preview += f"<pre>{content}...</pre>"
-        except:
+        except (IOError, OSError):
             preview += "<i>Vorschau nicht verfgbar</i>"
         
         self.preview_text.setHtml(preview)
@@ -6914,7 +6914,7 @@ Beschreibung:
                             versions = json.load(f)
                             if not isinstance(versions, list):
                                 versions = [versions]
-                    except:
+                    except (json.JSONDecodeError, IOError, OSError):
                         versions = []
                 
                 # Neue Version hinzufügen
@@ -7884,7 +7884,7 @@ class ConnectionsWidget(QWidget):
                 if viewer_path and os.path.exists(viewer_path):
                     try:
                         subprocess.Popen([sys.executable, viewer_path, db_path])
-                    except:
+                    except (OSError, subprocess.SubprocessError):
                         pass
                 else:
                     QMessageBox.information(
