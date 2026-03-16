@@ -13,7 +13,7 @@ import traceback
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QListWidget, QListWidgetItem,
     QMenu, QHBoxLayout, QPushButton, QProgressBar, QLabel,
     QDialog, QFormLayout, QLineEdit, QComboBox, QCheckBox, QDialogButtonBox,
@@ -21,11 +21,11 @@ from PyQt6.QtWidgets import (
     QTreeWidget, QTreeWidgetItem, QInputDialog, QGroupBox, QRadioButton, QButtonGroup,
     QFileIconProvider, QSpinBox, QScrollArea
 )
-from PyQt6.QtCore import (
-    Qt, QThread, pyqtSignal, QObject, QTimer, 
+from PySide6.QtCore import (
+    Qt, QThread, Signal, QObject, QTimer, 
     QSize, QFileInfo
 )
-from PyQt6.QtGui import QAction, QPalette, QColor, QFont, QPixmap, QIcon, QImage
+from PySide6.QtGui import QAction, QPalette, QColor, QFont, QPixmap, QIcon, QImage
 
 # Optionale Bibliotheken
 try:
@@ -415,8 +415,8 @@ class AutoSyncManager(QObject):
     Verwaltet Watchdog-Observer für Auto-Sync.
     Kann mehrere Watch-Ordner gleichzeitig überwachen.
     """
-    status_changed = pyqtSignal(str)
-    file_synced = pyqtSignal(str)
+    status_changed = Signal(str)
+    file_synced = Signal(str)
     
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -662,9 +662,9 @@ class PDFUtils:
 
 class AnonymizationWorker(QThread):
     """Worker-Thread für Anonymisierung und Schwärzung"""
-    progress = pyqtSignal(int, int)  # current, total
-    log_message = pyqtSignal(str)
-    finished = pyqtSignal()
+    progress = Signal(int, int)  # current, total
+    log_message = Signal(str)
+    finished = Signal()
     
     def __init__(self, file_paths, blacklist, whitelist, placeholder="[-----]", mode="anonymize"):
         super().__init__()
@@ -1345,10 +1345,10 @@ class ConnectionDB:
 # ============================================================================
 
 class SyncSignals(QObject):
-    progress = pyqtSignal(int)
-    status = pyqtSignal(str)
-    finished = pyqtSignal()
-    error = pyqtSignal(str)
+    progress = Signal(int)
+    status = Signal(str)
+    finished = Signal()
+    error = Signal(str)
 
 class SyncWorker(QThread):
     def __init__(self, cfg, mode="sync"):
@@ -1501,8 +1501,8 @@ class SyncWorker(QThread):
 # ============================================================================
 
 class SearchWorker(QThread):
-    results_found = pyqtSignal(list)
-    finished = pyqtSignal()
+    results_found = Signal(list)
+    finished = Signal()
     
     def __init__(self, manager, params, settings):
         super().__init__()
@@ -1614,9 +1614,9 @@ class SearchWorker(QThread):
 
 class DuplicateWorker(QThread):
     """Findet Duplikate basierend auf Content-Hash"""
-    results_ready = pyqtSignal(dict)
-    progress = pyqtSignal(int, str)
-    finished = pyqtSignal()
+    results_ready = Signal(dict)
+    progress = Signal(int, str)
+    finished = Signal()
     
     def __init__(self, db_paths, criteria):
         super().__init__()
@@ -1727,10 +1727,10 @@ class BatchProcessor(QThread):
     Verarbeitet mehrere Dateien im Hintergrund mit Fortschrittsrückmeldung.
     Unterstützte Operationen: copy, pdf_encrypt, pdf_decrypt, pdf_extract_text
     """
-    progress = pyqtSignal(int, int, str)  # current, total, current_filename
-    file_completed = pyqtSignal(str, bool, str)  # filename, success, message
-    all_completed = pyqtSignal(int, int)  # success_count, error_count
-    log_message = pyqtSignal(str)  # log entry
+    progress = Signal(int, int, str)  # current, total, current_filename
+    file_completed = Signal(str, bool, str)  # filename, success, message
+    all_completed = Signal(int, int)  # success_count, error_count
+    log_message = Signal(str)  # log entry
     
     def __init__(self, files: list, operation: str, params: dict = None):
         super().__init__()
@@ -2321,9 +2321,9 @@ def shorten_filename(name, max_len):
 
 class SyncWorkerSignals(QObject):
     """Signals für SyncWorker"""
-    status = pyqtSignal(str)
-    progress = pyqtSignal(int, str)
-    finished = pyqtSignal()
+    status = Signal(str)
+    progress = Signal(int, str)
+    finished = Signal()
 
 
 class SyncWorker(QThread):
@@ -4258,10 +4258,10 @@ class ConnectionDialog(QDialog):
 
 class IndexWorkerSignals(QObject):
     """Signals for IndexWorker"""
-    status = pyqtSignal(str)
-    progress = pyqtSignal(int, str)  # (percentage, phase_name)
-    finished = pyqtSignal()
-    error = pyqtSignal(str)
+    status = Signal(str)
+    progress = Signal(int, str)  # (percentage, phase_name)
+    finished = Signal()
+    error = Signal(str)
 
 class IndexWorker(QThread):
     """Worker thread for indexing files from multiple source folders"""
@@ -5853,7 +5853,7 @@ class SearchWidgetHybrid(QWidget):
             mime_data = QMimeData()
             
             # Setze URLs
-            from PyQt6.QtCore import QUrl
+            from PySide6.QtCore import QUrl
             urls = [QUrl.fromLocalFile(path) for path in paths]
             mime_data.setUrls(urls)
             
@@ -8104,8 +8104,8 @@ class AutoSyncHandler(FileSystemEventHandler if HAS_WATCHDOG else object):
 class AutoSyncManager(QObject):
     """Manager für mehrere Watch-Ordner mit UI-Integration"""
     
-    status_changed = pyqtSignal(str)
-    file_synced = pyqtSignal(str)
+    status_changed = Signal(str)
+    file_synced = Signal(str)
     
     def __init__(self, parent=None):
         super().__init__(parent)

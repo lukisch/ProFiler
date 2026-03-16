@@ -12,14 +12,14 @@ import re
 from pathlib import Path
 from typing import List
 
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QTabWidget, QPushButton, QLabel, QLineEdit, QListWidget,
     QTextEdit, QFileDialog, QMessageBox, QCheckBox,
     QSystemTrayIcon, QMenu
 )
-from PyQt6.QtCore import Qt, QTimer
-from PyQt6.QtGui import QAction, QColor, QPixmap, QPainter, QBrush, QIcon
+from PySide6.QtCore import Qt, QTimer
+from PySide6.QtGui import QAction, QColor, QPixmap, QPainter, QBrush, QIcon
 
 # ============================================================================
 # KONFIGURATION

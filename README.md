@@ -92,7 +92,7 @@ Looking for full-text search with BM25 ranking, LLM summarization, or a web view
 
 AGPL v3 -- Siehe [LICENSE](LICENSE)
 
-Dieses Projekt verwendet PyQt6 (GPL) und PyMuPDF (AGPL).
+Dieses Projekt verwendet PySide6 (LGPL) und PyMuPDF (AGPL).
 
 ---
 
@@ -182,7 +182,7 @@ START.bat
 
 AGPL v3 -- See [LICENSE](LICENSE)
 
-This project uses PyQt6 (GPL) and PyMuPDF (AGPL).
+This project uses PySide6 (LGPL) and PyMuPDF (AGPL).
 
 ---
 
